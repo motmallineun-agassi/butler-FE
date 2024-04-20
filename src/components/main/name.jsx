@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 export function Name({ selected }) {
   const [lname, setLName] = useState("");
   const [fname, setFName] = useState("");
+  sessionStorage.setItem("lname", lname);
+  sessionStorage.setItem("fname", fname);
   return (
     <div>
       <div>
