@@ -30,15 +30,17 @@ export function Chat() {
   const handleSend = () => {
     addMessage(question, true);
     sendMessage();
+    console.log(question.type);
   };
 
   async function sendMessage() {
     try {
-      const response = await axios.post("/chat", question);
+      const response = await axios.post("/chat", { question: question });
       console.log(response.data);
-      addMessage(response.data, false);
+      addMessage(response.data.answer, false);
     } catch (error) {
       console.log(error.response.data);
+
       addMessage("답변 생성에 실패했습니다.", false);
     }
   }
