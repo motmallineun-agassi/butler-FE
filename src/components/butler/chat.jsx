@@ -1,6 +1,7 @@
 import MediaQuery from "react-responsive";
 import { useState } from "react";
 import axios from "axios";
+import { Header } from "../main";
 import "./butler.css";
 
 export function Chat() {
@@ -44,6 +45,7 @@ export function Chat() {
 
   return (
     <>
+      <Header isConsult={true} />
       <div>
         <MediaQuery minWidth={1024}>웹페이지</MediaQuery>
         <MediaQuery maxWidth={1023} minWidth={768}>
