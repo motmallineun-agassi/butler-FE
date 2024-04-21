@@ -115,7 +115,9 @@ export const Script = ({ who }) => {
                 addMessage(
                   script[currentId].dialogueText
                     .replace(/{first name}/g, fname)
-                    .replace(/{last name}/g, lname)
+                    .replace(/{last name}/g, lname),
+                  script[currentId].dialogueType,
+                  script[currentId].speakerName
                 );
                 setCurrentId(currentId + 1);
               } else {
@@ -126,7 +128,11 @@ export const Script = ({ who }) => {
                   addMessage(
                     script[currentId].dialogueText
                       .replace(/{first name}/g, fname)
-                      .replace(/{last name}/g, lname)
+                      .replace(/{last name}/g, lname),
+                    script[currentId].dialogueType,
+                    script[currentId].speakerName,
+                    script[currentId].speakerName ===
+                      script[currentId - 1].speakerName
                   );
 
                   setCurrentId(currentId + 1);
@@ -137,7 +143,11 @@ export const Script = ({ who }) => {
                   addMessage(
                     script[currentId].dialogueText
                       .replace(/{first name}/g, fname)
-                      .replace(/{last name}/g, lname)
+                      .replace(/{last name}/g, lname),
+                    script[currentId].dialogueType,
+                    script[currentId].speakerName,
+                    script[currentId].speakerName ===
+                      script[currentId - 1].speakerName
                   );
                   setCurrentId(script[currentId].nextDialogueId - 1);
                 } else if (script[currentId].nextDialogueId === 0)
@@ -157,12 +167,33 @@ export const Script = ({ who }) => {
     }
   }, [currentId, script, likeability]);
 
-  const addMessage = (question) => {
+  const renderChat = (question, type, who, samechar) => {
+    return type === "character" ? (
+      <>
+        <div>
+          {samechar ? null : who === "황태자" ? (
+            <img src="/char1-prof.png" />
+          ) : who === "집사" ? (
+            <img src="/char4-prof.png" />
+          ) : who === "북부대공" ? (
+            <img src="/character2.png" />
+          ) : who === "서부상단주" ? (
+            <img src="/character3.png" />
+          ) : (
+            <img src="/default.png" />
+          )}
+        </div>
+        <div>{question}</div>
+      </>
+    ) : (
+      <div id={type === "narration" ? "narration" : "user"}>{question}</div>
+    );
+  };
+
+  const addMessage = (question, type, who, samechar) => {
     setChat((prevMessages) => [
       ...prevMessages,
-      question,
-      /*?.replace(/{first name}/g, fname)
-        ?.replace(/{last name}/g, lname),*/
+      renderChat(question, type, who, samechar),
     ]);
   };
 
