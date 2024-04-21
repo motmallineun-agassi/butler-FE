@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { Name } from "./name";
 import { SelectModal } from "../miyeonshi";
+import { useNavigate } from "react-router-dom";
 
 export function Main() {
   const [selected, setSelected] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
+  const navigate = useNavigate();
   const [nameSaved, setNameSaved] = useState(
     sessionStorage.getItem("nameSaved")
   );
@@ -32,6 +34,7 @@ export function Main() {
           <Name selected={selected} setNameSaved={setNameSaved} />
         )}
         {nameSaved && selected === "2" && <SelectModal />}
+        {nameSaved && selected === "1" && navigate("/butler")}
       </div>
     </div>
   );

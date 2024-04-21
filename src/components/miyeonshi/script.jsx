@@ -58,11 +58,11 @@ export const Script = ({ who }) => {
     setLikeability(
       script[currentId].scoreChange === undefined
         ? likeability
-        : likeability + script[currentId].scoreChange
+        : likeability + score
     );
     setCurrentId(nextId - 1);
 
-    console.log(script[currentId].scoreChange);
+    console.log(score);
 
     setSelected(true);
   };
@@ -103,7 +103,7 @@ export const Script = ({ who }) => {
             .replace(/{first name}/g, fname)
             .replace(/{last name}/g, lname),
           script[currentId + 1].nextDialogueId,
-          script[currentId].scoreChange
+          script[currentId + 1].scoreChange
         )
       );
     } else if (selected) {
