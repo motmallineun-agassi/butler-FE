@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { SelectModal } from "../miyeonshi";
+import axios from "axios";
 
 export function Name({ selected, setNameSaved }) {
   const [lname, setLName] = useState("");
@@ -10,10 +11,22 @@ export function Name({ selected, setNameSaved }) {
 
   const [modalOpen, setModalOpen] = useState(false);
 
+  const getId = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.get("/generateSessionId");
+      console.log(response.data);
+      sessionStorage.setItem("id", response.data);
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  };
+
   const handleModalOpen = () => {
     return () => {
       setModalOpen(true);
       sessionStorage.setItem("nameSaved", true);
+      getId();
     };
   };
   return (
@@ -37,7 +50,9 @@ export function Name({ selected, setNameSaved }) {
         />
       </div>
       {selected == "1" ? (
-        <Link to="/butler">확인</Link>
+        <Link to="/butler">
+          <div onClick={getId}>확인</div>
+        </Link>
       ) : (
         <button onClick={handleModalOpen()}>확인</button>
       )}

@@ -197,6 +197,8 @@ export const Script = ({ who }) => {
     ]);
   };
 
+  sessionStorage.setItem(`${who}`, likeability);
+
   return (
     <>
       <Header isConsult={false} />

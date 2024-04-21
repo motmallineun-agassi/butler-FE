@@ -37,7 +37,10 @@ export function Chat() {
 
   async function sendMessage() {
     try {
-      const response = await axios.post("/chat", { question: question });
+      const response = await axios.post("/chat", {
+        question: question,
+        sessionId: sessionStorage.getItem("sessionId"),
+      });
       console.log(response.data);
       addMessage(response.data.answer.replace(/겨레/g, fname), false);
     } catch (error) {
