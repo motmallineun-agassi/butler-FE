@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import { Name } from "./name";
+import { SelectModal } from "../miyeonshi";
 
 export function Main() {
   const [selected, setSelected] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
+  const [nameSaved, setNameSaved] = useState(
+    sessionStorage.getItem("nameSaved")
+  );
   function handleOnClick(select) {
     return () => {
       setModalOpen(true);
@@ -24,7 +28,10 @@ export function Main() {
         <button id="button" onClick={handleOnClick("2")}>
           못말리는 연애 시뮬레이션
         </button>
-        {modalOpen && <Name selected={selected} />}
+        {!nameSaved && modalOpen && (
+          <Name selected={selected} setNameSaved={setNameSaved} />
+        )}
+        {nameSaved && selected === "2" && <SelectModal />}
       </div>
     </div>
   );

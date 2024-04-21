@@ -36,7 +36,7 @@ export const dummyData = [
     speaker_name: "",
     dialogueText:
       "당신은 당신의 충성스러운 집사와 함께 당신의 첫 무도회를 준비합니다.",
-    nextDialogueId: 5,
+    nextDialogueId: 0,
   },
   {
     dialogue_id: 5,

@@ -1,11 +1,21 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { SelectModal } from "../miyeonshi";
 
-export function Name({ selected }) {
+export function Name({ selected, setNameSaved }) {
   const [lname, setLName] = useState("");
   const [fname, setFName] = useState("");
   sessionStorage.setItem("lname", lname);
   sessionStorage.setItem("fname", fname);
+
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleModalOpen = () => {
+    return () => {
+      setModalOpen(true);
+      sessionStorage.setItem("nameSaved", true);
+    };
+  };
   return (
     <div>
       <div>
@@ -29,8 +39,10 @@ export function Name({ selected }) {
       {selected == "1" ? (
         <Link to="/butler">확인</Link>
       ) : (
-        <Link to="/love-simulation">확인</Link>
+        <button onClick={handleModalOpen()}>확인</button>
       )}
+
+      {modalOpen && <SelectModal />}
     </div>
   );
 }

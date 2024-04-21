@@ -8,6 +8,8 @@ export function Chat() {
   const [messages, setMessages] = useState([]);
   const [question, setQuestion] = useState("");
 
+  const fname = sessionStorage.getItem("fname");
+
   const renderChat = (question, isUser) => {
     return (
       <div id={isUser ? "user" : "butler"}>
@@ -37,7 +39,7 @@ export function Chat() {
     try {
       const response = await axios.post("/chat", { question: question });
       console.log(response.data);
-      addMessage(response.data.answer, false);
+      addMessage(response.data.answer.replace(/겨레/g, fname), false);
     } catch (error) {
       console.log(error.response.data);
 
@@ -67,6 +69,8 @@ export function Chat() {
         <input value={question} onChange={handleQuestionChange} id="input" />
         <button onClick={handleSend}>전송</button>
       </div>
+
+      <div id="select-char"></div>
     </>
   );
 }
