@@ -1,0 +1,94 @@
+#main-wrap {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #ffffff 0%, #ffe1f0 100%, #ffb5d8 100%);
+  flex-direction: column;
+  gap: 110px;
+}
+
+#logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+#button {
+  width: fit-content;
+}
+
+#modal {
+  background-color: white;
+  width: 1014px;
+  height: 691px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 40px;
+  box-shadow: 0px 0px 50px 0px #ff83be;
+  gap: 100px;
+}
+
+#modal-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 9998;
+  width: 100vw;
+  height: 100vh;
+}
+
+#john-ham {
+  display: inherit;
+  flex-direction: inherit;
+}
+
+#modal > button {
+  width: 295px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#name {
+  display: flex;
+  gap: 80px;
+}
+
+#lname,
+#fname {
+  width: 232px;
+  height: 89px;
+  border-radius: 50px;
+  border: 0px;
+  box-shadow: 0px 0px 20px 0px #00000040;
+  font-family: "Cafe24ClassicType";
+  font-weight: 400;
+  font-size: 40px;
+  padding: 0px 50px;
+}
+
+#lname::placeholder,
+#fname::placeholder {
+  color: #bbbbbb;
+}
+
+button > a {
+  width: 295px;
+  height: 89px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

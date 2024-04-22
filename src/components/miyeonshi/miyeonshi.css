@@ -1,0 +1,76 @@
+#profile > img {
+  width: 304px;
+}
+
+#char-list {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+#modal-wrap > .char {
+  width: 1072px;
+  height: 821px;
+  gap: 35px;
+}
+
+#character {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#profile {
+}
+
+#character > button {
+  width: 217px;
+  height: 54px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+button > a {
+  font-size: 24px;
+  width: 217px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal {
+}
+
+#name-prof {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+#score {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+#score > p {
+  font-family: "Cafe24ClassicType";
+  font-weight: 400;
+  font-size: 20px;
+}
+
+#description {
+  width: 247px;
+  font-family: "Pretendard";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23.87px;
+  text-align: left;
+}

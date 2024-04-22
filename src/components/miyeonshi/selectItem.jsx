@@ -6,7 +6,7 @@ export const SelectItem = ({ id, name, score, description }) => {
       <div id="profile">
         <img src={`/character${id}.png`} alt="캐릭터" />
 
-        <div id="name">
+        <div id="name-prof">
           <h4>{name}</h4>
           <div id="score">
             <img src="/Heart.svg" alt="호감도" />
@@ -15,7 +15,9 @@ export const SelectItem = ({ id, name, score, description }) => {
         </div>
       </div>
       <div id="description">{description}</div>
-      <Link to={`/love-simulation/${id}`}>공략하기</Link>
+      <button>
+        <Link to={`/love-simulation/${id}`}>공략하기</Link>
+      </button>
     </div>
   );
 };

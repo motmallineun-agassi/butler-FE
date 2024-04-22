@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SelectModal } from "../miyeonshi";
 import axios from "axios";
 
@@ -8,6 +8,7 @@ export function Name({ selected, setNameSaved }) {
   const [fname, setFName] = useState("");
   sessionStorage.setItem("lname", lname);
   sessionStorage.setItem("fname", fname);
+  const navigate = useNavigate();
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -16,26 +17,33 @@ export function Name({ selected, setNameSaved }) {
     try {
       const response = await axios.get("/generateSessionId");
       console.log(response.data);
-      sessionStorage.setItem("id", response.data);
+      sessionStorage.setItem("id", response.data.sessionId);
+      sessionStorage.setItem("nameSaved", true);
     } catch (error) {
       console.log(error.response.data);
     }
   };
 
+  const handleButlerPage = () => {
+    return () => {
+      getId();
+      navigate("/butler");
+    };
+  };
+
   const handleModalOpen = () => {
     return () => {
       setModalOpen(true);
-      sessionStorage.setItem("nameSaved", true);
       getId();
     };
   };
   return (
-    <div>
-      <div>
-        <p>시작하기 전, 아가씨의 존함을</p>
-        <p>집사에게 알려 주세요.</p>
+    <div id="modal">
+      <div id="john-ham">
+        <h4>시작하기 전, 아가씨의 존함을</h4>
+        <h4>집사에게 알려 주세요.</h4>
       </div>
-      <div>
+      <div id="name">
         <input
           id="lname"
           value={lname}
@@ -50,14 +58,18 @@ export function Name({ selected, setNameSaved }) {
         />
       </div>
       {selected == "1" ? (
-        <Link to="/butler">
-          <div onClick={getId}>확인</div>
-        </Link>
+        <button onClick={getId}>
+          <Link to="/butler">확인</Link>
+        </button>
       ) : (
         <button onClick={handleModalOpen()}>확인</button>
       )}
 
-      {modalOpen && <SelectModal />}
+      {modalOpen && (
+        <div id="modal-wrap">
+          <SelectModal />
+        </div>
+      )}
     </div>
   );
 }

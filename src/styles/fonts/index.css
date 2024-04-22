@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "Cafe24ClassicType";
+  src: url("./Cafe24Classictype.woff") format("woff"),
+    url("./Cafe24Classictype.woff2") format("woff2"),
+    url("./Cafe24Classictype.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("./Pretendard-Regular.woff") format("woff");
+}
