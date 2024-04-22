@@ -12,8 +12,7 @@ export function Name({ selected, setNameSaved }) {
 
   const [modalOpen, setModalOpen] = useState(false);
 
-  const getId = async (e) => {
-    e.preventDefault();
+  const getId = async () => {
     try {
       const response = await axios.get("/generateSessionId");
       console.log(response.data);
@@ -24,18 +23,17 @@ export function Name({ selected, setNameSaved }) {
     }
   };
 
-  const handleButlerPage = () => {
-    return () => {
-      getId();
-      navigate("/butler");
-    };
+  const handleButlerPage = async (e) => {
+    e.preventDefault();
+    await getId(); // getId 함수가 완료될 때까지 대기
+    navigate("/butler");
   };
 
-  const handleModalOpen = () => {
-    return () => {
-      setModalOpen(true);
-      getId();
-    };
+  const handleModalOpen = (e) => {
+    e.preventDefault();
+
+    setModalOpen(true);
+    getId();
   };
   return (
     <div id="modal">
@@ -57,12 +55,10 @@ export function Name({ selected, setNameSaved }) {
           onChange={(e) => setFName(e.target.value)}
         />
       </div>
-      {selected == "1" ? (
-        <button onClick={getId}>
-          <Link to="/butler">확인</Link>
-        </button>
+      {selected === "1" ? (
+        <button onClick={(e) => handleButlerPage(e)}>확인</button>
       ) : (
-        <button onClick={handleModalOpen()}>확인</button>
+        <button onClick={(e) => handleModalOpen(e)}>확인</button>
       )}
 
       {modalOpen && (
