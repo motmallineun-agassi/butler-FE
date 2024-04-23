@@ -1,5 +1,5 @@
 import MediaQuery from "react-responsive";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { Header } from "../main";
 import "./butler.css";
@@ -13,7 +13,15 @@ export function Chat() {
   const renderChat = (question, isUser) => {
     return (
       <div id={isUser ? "user" : "butler"}>
-        <p>{question}</p>
+        <div id="flex-row">
+          {isUser ? null : (
+            <div id="prof">
+              <img src="char4-prof.png" alt="집사" />
+            </div>
+          )}
+
+          <p id="margin">{question}</p>
+        </div>
       </div>
     );
   };
@@ -32,6 +40,7 @@ export function Chat() {
   const handleSend = () => {
     addMessage(question, true);
     sendMessage();
+    setQuestion("");
     console.log(question.type);
   };
 
@@ -50,30 +59,56 @@ export function Chat() {
     }
   }
 
+  const chatRef = useRef();
+
+  function scrollToBottomOfModal() {
+    if (chatRef.current) {
+      chatRef.current.scrollTop = chatRef.current.scrollHeight;
+    }
+  }
+
+  useEffect(() => {
+    scrollToBottomOfModal();
+  }, [messages]);
+
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSend();
+    }
+  };
+
   return (
-    <>
-      <Header isConsult={true} />
-      <div>
-        <MediaQuery minWidth={1024}>웹페이지</MediaQuery>
-        <MediaQuery maxWidth={1023} minWidth={768}>
-          태블릿
-        </MediaQuery>
-        <MediaQuery maxWidth={767}>모바일</MediaQuery>
+    <div id="wrap">
+      <div id="screen">
+        <Header isConsult={true} />
+        <div id="chat" className="butler-chat" ref={chatRef}>
+          <div id="butler">
+            <div id="flex-row">
+              <div id="prof">
+                <img src="char4-prof.png" />
+              </div>
+              <p id="margin">어서오세요, 아가씨.</p>
+            </div>
+          </div>
+          <div id="butler">
+            <div id="flex-row">
+              <div id="prof"></div>
+              <p>제가 도와드릴 일이 있나요?</p>
+            </div>
+          </div>
+          {messages}
+        </div>
+        <div id="input-wrap">
+          <input
+            value={question}
+            onChange={handleQuestionChange}
+            id="input"
+            placeholder="send message..."
+            onKeyPress={handleKeyPress}
+          />
+          <img src="/send.svg" alt="전송" onClick={handleSend} id="send" />
+        </div>
       </div>
-      <div id="butler">
-        <p>어서오세요, 아가씨.</p>
-      </div>
-      <div id="butler">
-        <p>제가 도와드릴 일이 있나요?</p>
-      </div>
-      {messages}
-
-      <div id="input-wrap">
-        <input value={question} onChange={handleQuestionChange} id="input" />
-        <button onClick={handleSend}>전송</button>
-      </div>
-
-      <div id="select-char"></div>
-    </>
+    </div>
   );
 }

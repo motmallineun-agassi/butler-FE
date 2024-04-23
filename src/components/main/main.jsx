@@ -37,11 +37,7 @@ export function Main() {
           <Name selected={selected} setNameSaved={setNameSaved} />
         </div>
       )}
-      {nameSaved && selected === "2" && (
-        <div id="modal-wrap">
-          <SelectModal />
-        </div>
-      )}
+      {nameSaved && selected === "2" && navigate("/love-simulation")}
       {nameSaved && selected === "1" && navigate("/butler")}
     </div>
   );

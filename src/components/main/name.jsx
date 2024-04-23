@@ -29,11 +29,10 @@ export function Name({ selected, setNameSaved }) {
     navigate("/butler");
   };
 
-  const handleModalOpen = (e) => {
+  const handleModalOpen = async (e) => {
     e.preventDefault();
-
-    setModalOpen(true);
-    getId();
+    await getId();
+    navigate("/love-simulation");
   };
   return (
     <div id="modal">
@@ -59,12 +58,6 @@ export function Name({ selected, setNameSaved }) {
         <button onClick={(e) => handleButlerPage(e)}>확인</button>
       ) : (
         <button onClick={(e) => handleModalOpen(e)}>확인</button>
-      )}
-
-      {modalOpen && (
-        <div id="modal-wrap">
-          <SelectModal />
-        </div>
       )}
     </div>
   );
