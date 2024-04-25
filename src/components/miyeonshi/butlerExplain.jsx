@@ -7,6 +7,11 @@ export const ButlerExplain = () => {
   const [currentId, setCurrentId] = useState(0);
   const [modalOpen, setModalOpen] = useState(false);
 
+  function closeModal() {
+    setModalOpen(false);
+  }
+
+  const [end, setEnd] = useState(false);
   useEffect(() => {
     const script = [
       "이 집사가 가상 대화로 연애 수업을 준비해 보았습니다.",
@@ -19,19 +24,43 @@ export const ButlerExplain = () => {
       if (currentId < 5) {
         addMessage(script[currentId]);
         setCurrentId(currentId + 1);
-      } else {
+      } else if (!end) {
         setModalOpen(true);
+        setEnd(true);
+
+        addButton(
+          <button onClick={select} id="margin">
+            캐릭터 선택하기
+          </button>
+        );
       }
     }, 1000);
     return () => clearInterval(interval);
   });
 
+  function select() {
+    setModalOpen(true);
+  }
+
   const addMessage = (question) => {
     setChat((prevMessages) => [
       ...prevMessages,
+      <div id="butler">
+        <div id="flex-row">
+          <div id="prof"></div>
+          <p>{question}</p>
+        </div>
+      </div>,
+    ]);
+  };
+
+  const addButton = (question) => {
+    setChat((prevMessages) => [
+      ...prevMessages,
+
       <div id="flex-row">
         <div id="prof"></div>
-        <p>{question}</p>
+        {question}
       </div>,
     ]);
   };
@@ -50,14 +79,22 @@ export const ButlerExplain = () => {
                 최근 아가씨께서 남자 문제로 고민이 많으신 것 같아...
               </p>
             </div>
-            {chat}
           </div>
+          {chat}
+          {/*currentId >= 5 ? (
+              <div id="flex-row">
+                <div id="prof"></div>
+                <button onClick={select} id="margin">
+                  캐릭터 선택하기
+                </button>
+              </div>
+            ) : null*/}
         </div>
       </div>
       {modalOpen && (
         <div id="select-wrap">
           <div id="modal-wrap">
-            <SelectModal />
+            <SelectModal setModalOpen={closeModal} />
           </div>
         </div>
       )}

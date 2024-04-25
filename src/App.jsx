@@ -12,6 +12,7 @@ function App() {
       <Route path="/love-simulation/1" element={<Script who={1} />} />
       <Route path="/love-simulation/2" element={<Script who={2} />} />
       <Route path="/love-simulation/3" element={<Script who={3} />} />
+      <Route path="/love-simulation/4" element={<Script who={4} />} />
     </Routes>
   );
 }

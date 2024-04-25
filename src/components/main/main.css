@@ -53,6 +53,8 @@
 
 #john-ham {
   display: inherit;
+  align-items: center;
+
   flex-direction: inherit;
 }
 
@@ -85,26 +87,26 @@
   color: #bbbbbb;
 }
 
-button > a {
-  width: 295px;
-  height: 89px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 #header {
   position: sticky;
   top: 0px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 30px;
+  justify-content: space-between;
   height: 110px;
   border-top: 1px solid white;
   border-bottom: 1px solid black;
   background-color: white;
   user-select: none;
+  z-index: 9999;
+}
+
+#header-title {
+  gap: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 #screen {

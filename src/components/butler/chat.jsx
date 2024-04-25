@@ -106,7 +106,12 @@ export function Chat() {
             placeholder="send message..."
             onKeyPress={handleKeyPress}
           />
-          <img src="/send.svg" alt="전송" onClick={handleSend} id="send" />
+          <img
+            src="/send.svg"
+            alt="전송"
+            onClick={question === "" ? null : handleSend}
+            id={question === "" ? "disabled" : "send"}
+          />
         </div>
       </div>
     </div>
