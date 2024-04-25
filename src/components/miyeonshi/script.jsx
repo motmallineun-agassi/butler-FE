@@ -69,7 +69,7 @@ export const Script = ({ who }) => {
       setEndingId(endingId + 1);
     } else {
       setEnding(true);
-      addMessage(<Ending who={who} />);
+      addMessage(<Ending who={who} selectedLine={selectedLine} />);
     }
   };
 
@@ -86,12 +86,18 @@ export const Script = ({ who }) => {
     return item ? item.lines : null;
   }
 
+  const [selectedLine, setSelectedLine] = useState("");
+
   const handleNextId = (nextId, line, line2, score, selected) => {
     handleShown();
     if (who !== 4) {
       setLikeability(score === undefined ? likeability : likeability + score);
     }
     console.log(score);
+
+    if (who === 4) {
+      setSelectedLine(selected);
+    }
 
     addMessage(
       <div id="answers">

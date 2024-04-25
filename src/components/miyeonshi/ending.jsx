@@ -1,7 +1,7 @@
 import { CHAR_LIST } from "./miyeonshi.const";
 import { Link } from "react-router-dom";
 
-export const Ending = ({ who }) => {
+export const Ending = ({ who, selectedLine }) => {
   const score = sessionStorage.getItem(who);
 
   return (
@@ -23,15 +23,25 @@ export const Ending = ({ who }) => {
                     <p style={{ fontSize: "24px" }}>최종 호감도: {score}</p>
                   </div>
                   <p>
-                    {who === 1
-                      ? "황태자"
-                      : who === 2
-                      ? "북부대공"
-                      : who === 3
-                      ? "서부상단주"
-                      : "집사"}
-                    을(를) 공략하는 데{" "}
-                    {score === "100" ? "성공했습니다!" : "실패했습니다."}
+                    {who === 4 && selectedLine === "붙잡는다" ? (
+                      <p>집사를 공략하는 데 성공했습니다!</p>
+                    ) : who === 1 ? (
+                      "황태자"
+                    ) : who === 2 ? (
+                      "북부대공"
+                    ) : who === 3 ? (
+                      "서부상단주"
+                    ) : (
+                      "집사"
+                    )}
+                    {who === 4 && selectedLine === "붙잡는다"
+                      ? null
+                      : "을(를) 공략하는 데"}
+                    {who !== 4 && selectedLine !== "붙잡는다"
+                      ? score === "100"
+                        ? "성공했습니다!"
+                        : "실패했습니다."
+                      : null}
                   </p>
                 </div>
               </div>
