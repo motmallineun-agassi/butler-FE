@@ -36,7 +36,7 @@ export const Ending = ({ who, selectedLine }) => {
                     )}
                     {who === 4 && selectedLine === "붙잡는다"
                       ? null
-                      : "을(를) 공략하는 데"}
+                      : "를(을) 공략하는 데 "}
                     {who !== 4 && selectedLine !== "붙잡는다"
                       ? score === "100"
                         ? "성공했습니다!"

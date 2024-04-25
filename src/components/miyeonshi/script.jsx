@@ -129,6 +129,7 @@ export const Script = ({ who }) => {
     }
     setCurrentId(nextId - 1);
     setSelected(true);
+
     setSetChoice(null);
   };
 
@@ -157,10 +158,13 @@ export const Script = ({ who }) => {
     console.log(likeability);
   }, [likeability, selected]);
 
+  const [beforeId, setBeforeId] = useState(0);
+
   const showScript = () => {
     if (script[currentId]?.isChoice && !shown) {
       handleSelected();
       console.log(selected);
+      setBeforeId(currentId);
 
       setSetChoice(
         setChoice(
@@ -202,12 +206,26 @@ export const Script = ({ who }) => {
                     .replace(/{last name}/g, lname),
                   script[currentId].dialogueType,
                   script[currentId].speakerName,
-                  script[currentId].speakerName ===
-                    script[currentId - 1].speakerName,
+
+                  beforeId !== 0 &&
+                    script[currentId].speakerName !==
+                      script[beforeId].speakerName
+                    ? false
+                    : beforeId === 0 &&
+                      script[currentId].speakerName ===
+                        script[currentId - 1].speakerName
+                    ? true
+                    : script[currentId].speakerName ===
+                        script[beforeId].speakerName &&
+                      script[currentId].speakerName ===
+                        script[currentId - 1].speakerName
+                    ? true
+                    : false,
                   script[currentId].dialogueType ===
                     script[currentId - 1].dialogueType
                 );
-
+                setBeforeId(0);
+                console.log(beforeId);
                 setCurrentId(currentId + 1);
               } else if (
                 script[currentId].dialogueId + 1 <
@@ -219,13 +237,24 @@ export const Script = ({ who }) => {
                     .replace(/{last name}/g, lname),
                   script[currentId].dialogueType,
                   script[currentId].speakerName,
-                  script[currentId].speakerName ===
-                    script[currentId - 1].speakerName,
+                  beforeId === 0 &&
+                    script[currentId].speakerName !==
+                      script[currentId - 1].speakerName
+                    ? false
+                    : beforeId !== 0 &&
+                      script[currentId].speakerName !==
+                        script[beforeId].speakerName
+                    ? false
+                    : script[currentId].speakerName ===
+                        script[beforeId].speakerName &&
+                      script[currentId].speakerName ===
+                        script[currentId - 1].speakerName
+                    ? true
+                    : false,
                   script[currentId].dialogueType ===
-                    script[currentId - 1].dialogueType,
-                  script[currentId].sceneType ===
-                    script[currentId - 1].sceneType
+                    script[currentId - 1].dialogueType
                 );
+                setBeforeId(0);
                 setCurrentId(script[currentId].nextDialogueId - 1);
               } else {
                 addMessage("무언가 잘못됐다...");
@@ -233,8 +262,21 @@ export const Script = ({ who }) => {
             }
           }
         }
-        if (script[currentId].nextDialogueId === 0 && !ending)
+        if (script[currentId].nextDialogueId === 0 && !ending) {
+          addMessage(
+            <div id="narration">
+              <div id="flex-row">
+                <div>{script[currentId].dialogueText}</div>
+              </div>
+            </div>,
+            script[currentId].dialogueType,
+            script[currentId].speakerName,
+            script[currentId].speakerName === script[currentId - 1].speakerName,
+            script[currentId].dialogueType ===
+              script[currentId - 1].dialogueType
+          );
           return handleEnding();
+        }
       }
     }
   };
@@ -266,13 +308,13 @@ export const Script = ({ who }) => {
               <img src="/default.png" alt="엑스트라" />
             )}
           </div>
-          <p id={samechar ? null : "margin"}>{question}</p>
+          <p id={!sametype || !samechar ? "margin" : null}>{question}</p>
         </div>
       </div>
     ) : (
       <div id={type === "narration" ? "narration" : "user"}>
         <div id="flex-row">
-          <div id={!sametype ? "margin" : null}>{question}</div>
+          <div id={!sametype || !samechar ? "margin" : null}>{question}</div>
         </div>
       </div>
     );
