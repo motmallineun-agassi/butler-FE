@@ -37,7 +37,7 @@ export function Name({ selected, setNameSaved }) {
   return (
     <div id="modal">
       <div id="john-ham">
-        <h4>시작하기 전, 아가씨의 존함을</h4>
+        <h4>시작하기 전, </h4> <h4>아가씨의 존함을</h4>
         <h4>집사에게 알려 주세요.</h4>
       </div>
       <div id="name">

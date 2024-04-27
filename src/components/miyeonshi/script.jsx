@@ -43,8 +43,9 @@ export const Script = ({ who }) => {
   };
 
   const [endingId, setEndingId] = useState(0);
+  const [lastLine, setLastLine] = useState(false);
   const handleEnding = () => {
-    if (who === 4) {
+    if (!lastLine) {
       addMessage(
         <div id="narration">
           <div id="flex-row">
@@ -56,6 +57,7 @@ export const Script = ({ who }) => {
         script[currentId].speakerName === script[currentId - 1].speakerName,
         script[currentId].dialogueType === script[currentId - 1].dialogueType
       );
+      setLastLine(true);
     }
     const lines = findType();
     if (endingId < lines?.length) {
@@ -263,18 +265,6 @@ export const Script = ({ who }) => {
           }
         }
         if (script[currentId].nextDialogueId === 0 && !ending) {
-          addMessage(
-            <div id="narration">
-              <div id="flex-row">
-                <div>{script[currentId].dialogueText}</div>
-              </div>
-            </div>,
-            script[currentId].dialogueType,
-            script[currentId].speakerName,
-            script[currentId].speakerName === script[currentId - 1].speakerName,
-            script[currentId].dialogueType ===
-              script[currentId - 1].dialogueType
-          );
           return handleEnding();
         }
       }
