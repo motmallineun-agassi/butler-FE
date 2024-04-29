@@ -100,6 +100,7 @@ button > a {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
   }
   #modal {
     width: 70%;

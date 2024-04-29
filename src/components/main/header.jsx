@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ScoreModal } from "../miyeonshi";
 import { useState } from "react";
 
-export const Header = ({ isConsult }) => {
+export const Header = ({ isConsult, isTutorial = false }) => {
   const [open, setOpen] = useState(false);
   function openModal() {
     setOpen(true);
@@ -14,7 +14,7 @@ export const Header = ({ isConsult }) => {
   return (
     <div id="header">
       <div id="header-title">
-        <Link to="/">
+        <Link to={isTutorial ? "/tutorial-main" : "/"}>
           <img src="/back.svg" alt="뒤로가기" />
         </Link>
         <div>

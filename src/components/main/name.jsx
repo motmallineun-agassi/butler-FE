@@ -25,7 +25,7 @@ export function Name({ selected, setNameSaved }) {
 
   const handleButlerPage = async (e) => {
     e.preventDefault();
-    await getId(); // getId 함수가 완료될 때까지 대기
+    await getId();
     navigate("/butler");
   };
 
@@ -37,7 +37,9 @@ export function Name({ selected, setNameSaved }) {
   return (
     <div id="modal">
       <div id="john-ham">
-        <h4>시작하기 전, </h4> <h4>아가씨의 존함을</h4>
+        <div id="john-ham2">
+          <h4>시작하기 전, </h4> <h4>아가씨의 존함을</h4>
+        </div>
         <h4>집사에게 알려 주세요.</h4>
       </div>
       <div id="name">
