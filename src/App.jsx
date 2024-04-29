@@ -3,6 +3,7 @@ import {
   Routes,
   Route,
   useNavigate,
+  Navigate,
 } from "react-router-dom";
 import {
   Main,
@@ -20,20 +21,18 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [firsttime, setFirsttime] = useState();
+  const firsttime = localStorage.getItem("firsttime");
   const navigate = useNavigate();
 
   useEffect(() => {
-    setFirsttime(localStorage.getItem("firsttime"));
-  }, [firsttime]);
-  console.log(firsttime?.type);
+    if (firsttime !== "false") {
+      navigate("/tutorial");
+    }
+  }, [firsttime, navigate]);
+
   return (
     <Routes>
-      {firsttime === "false" ? (
-        <Route path="/" element={<Main />} />
-      ) : (
-        <Route path="/" element={navigate("/tutorial")} />
-      )}
+      <Route path="/" element={<Main />} />
       <Route path="/tutorial" element={<Tutorial />} />
       <Route path="/butler-tutorial" element={<ButlerTutorial />} />
       <Route path="/love-simulation-tutorial" element={<SimulTutorial />} />

@@ -145,7 +145,10 @@
 }
 
 #blank {
-  height: 88px;
+  font-size: 30px;
+  color: transparent;
+  background-color: transparent;
+  box-shadow: none;
 }
 
 #buttons > #select-wrap {

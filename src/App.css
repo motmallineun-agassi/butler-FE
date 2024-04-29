@@ -94,19 +94,27 @@ button > a {
     font-size: 30px;
   }
 
+  #instruction {
+    font-size: 22px;
+    height: 91px;
+  }
+
   #modal-wrap {
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
   }
   #modal {
     width: 70%;
     height: fit-content;
     padding: 70px;
     gap: 50px;
+  }
+
+  #john-ham2 {
+    flex-direction: column;
   }
 
   #name {
@@ -214,6 +222,10 @@ button > a {
     width: fit-content;
   }
 
+  #like {
+    padding: 0px 30px;
+  }
+
   #score-modal-wrap > #modal {
     height: 350px;
     overflow-y: scroll;
@@ -235,6 +247,9 @@ button > a {
   }
   #chat > div > #select-wrap > #modal-wrap > #modal {
     align-items: center;
+  }
+  #buttons > #select-wrap {
+    gap: 50px;
   }
 }
 
@@ -258,6 +273,11 @@ button > a {
     font-size: 30px;
   }
 
+  #instruction {
+    font-size: 22px;
+    height: 91px;
+  }
+
   #modal-wrap {
     width: 100vw;
     height: 100vh;
@@ -270,6 +290,10 @@ button > a {
     height: fit-content;
     padding: 70px;
     gap: 50px;
+  }
+
+  #john-ham2 {
+    flex-direction: column;
   }
 
   #name {
@@ -377,6 +401,10 @@ button > a {
     width: fit-content;
   }
 
+  #like {
+    padding: 0px 30px;
+  }
+
   #score-modal-wrap > #modal {
     height: 350px;
     overflow-y: scroll;
@@ -398,5 +426,8 @@ button > a {
   }
   #chat > div > #select-wrap > #modal-wrap > #modal {
     align-items: center;
+  }
+  #buttons > #select-wrap {
+    gap: 50px;
   }
 }

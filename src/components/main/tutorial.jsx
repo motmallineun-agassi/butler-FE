@@ -44,7 +44,7 @@ export const Tutorial = () => {
               <button id="button" onClick={handleOnClick()}>
                 집사와의 연애상담
               </button>
-              <div id="blank"></div>
+              <button id="blank">못말리는 연애 시뮬레이션</button>
             </div>
           </div>
         )}
@@ -203,7 +203,7 @@ export const Tutorial2 = () => {
             '못말리는 연애 시뮬레이션' 버튼을 클릭해 주세요.
           </h4>
           <div id="buttons">
-            <div id="blank"></div>
+            <button id="blank">집사와의 연애상담</button>
             <button id="button" onClick={handleOnClick()}>
               못말리는 연애 시뮬레이션
             </button>
