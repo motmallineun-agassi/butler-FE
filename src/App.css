@@ -146,16 +146,16 @@ button > a {
 
   #butler > #flex-row > p,
   #butler > #flex-row > div {
-    font-size: 25px;
-    padding: 15px 25px;
-    border-radius: 40px;
+    font-size: 23px;
+    padding: 15px 20px;
+    border-radius: 35px;
   }
 
   #user > #flex-row > p,
   #user > #flex-row > div {
-    font-size: 25px;
-    padding: 15px 25px;
-    border-radius: 40px;
+    font-size: 23px;
+    padding: 15px 20px;
+    border-radius: 35px;
   }
 
   #narration > #flex-row > div {
@@ -177,7 +177,17 @@ button > a {
     height: 60px;
   }
   #prof {
-    width: 89px;
+    width: 70px !important;
+    height: 70px !important;
+    margin-top: 30px !important;
+  }
+
+  #margin {
+    margin-top: 50px !important;
+  }
+
+  #prof > img {
+    width: 70px;
   }
   #butler > #flex-row > p {
     max-width: calc(100% - 200px);
@@ -251,6 +261,24 @@ button > a {
   #buttons > #select-wrap {
     gap: 50px;
   }
+
+  #answers {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  #like > p {
+    font-size: 18px;
+  }
+
+  #like {
+    margin: 20px;
+  }
+
+  #score {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-height: 720px) {
@@ -267,10 +295,15 @@ button > a {
 
   #button {
     font-size: 30px;
+    max-width: 350px;
   }
 
   h4 {
     font-size: 30px;
+  }
+
+  #modal > h4 {
+    width: 400px;
   }
 
   #instruction {
@@ -325,16 +358,16 @@ button > a {
 
   #butler > #flex-row > p,
   #butler > #flex-row > div {
-    font-size: 25px;
-    padding: 15px 25px;
-    border-radius: 40px;
+    font-size: 23px;
+    padding: 15px 20px;
+    border-radius: 35px;
   }
 
   #user > #flex-row > p,
   #user > #flex-row > div {
-    font-size: 25px;
-    padding: 15px 25px;
-    border-radius: 40px;
+    font-size: 23px;
+    padding: 15px 20px;
+    border-radius: 35px;
   }
 
   #narration > #flex-row > div {
@@ -349,17 +382,20 @@ button > a {
   #input {
     height: 60px;
     border-radius: 20px;
-    width: calc(100% - 200px);
+    width: calc(100% - 150px);
+    padding: 0px 20px;
+    font-size: 23px;
   }
 
   #input-wrap > img {
     height: 60px;
   }
   #prof {
-    width: 89px;
+    width: 80px;
+    margin-top: 20px;
   }
   #butler > #flex-row > p {
-    max-width: calc(100% - 200px);
+    max-width: calc(100% - 180px);
   }
 
   #select-wrap > #modal-wrap > #modal {
@@ -380,7 +416,7 @@ button > a {
   }
 
   #profile > img {
-    width: 200px !important;
+    width: 180px !important;
   }
   #description {
     padding: 20px 0px;
@@ -429,5 +465,9 @@ button > a {
   }
   #buttons > #select-wrap {
     gap: 50px;
+  }
+
+  #flex-row {
+    gap: 18px;
   }
 }
