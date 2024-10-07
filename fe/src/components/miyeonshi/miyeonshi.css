@@ -1,0 +1,372 @@
+#profile > img {
+  width: 304px;
+}
+
+#miyeonshi > #modal-wrap {
+  background: #00000040;
+}
+
+#miyeonshi > #modal-wrap > #modal {
+  box-shadow: 0px 0px 50px 0px #00000040;
+}
+
+#char-list {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+#modal-wrap > .char {
+  height: fit-content;
+  padding: 50px;
+  gap: 35px;
+}
+
+#character {
+  display: flex;
+  flex-direction: column;
+  height: 630px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#longer-modal {
+  height: 704px;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+#profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#longer-modal > button,
+#character > button {
+  width: 217px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+button > a {
+  font-size: 24px;
+  width: 217px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#name-prof {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+#score {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+#score > p {
+  font-family: "Cafe24ClassicType";
+  font-weight: 400;
+  font-size: 20px;
+}
+
+#description {
+  width: 247px;
+  height: 72px;
+  padding: 40px;
+  display: flex;
+  align-items: flex-start;
+  font-family: "Pretendard";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23.87px;
+  text-align: left;
+}
+
+#done {
+  background: #e50d74;
+}
+
+#chat {
+  position: static;
+  top: 110px;
+}
+
+#wrap {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+#padding {
+  padding-bottom: 300px;
+}
+
+#narration > #flex-row > div {
+  margin: 0;
+  padding: 16px;
+  max-width: 1100px;
+  font-family: "Pretendard";
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 35.8px;
+  text-align: center;
+  color: #717171;
+  user-select: none;
+}
+
+#narration {
+  display: flex;
+  justify-content: center;
+  user-select: none;
+}
+
+#answer {
+  background: #ffe1f0;
+  width: 336px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  font-family: "Pretendard";
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 35.8px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+#answer:hover {
+  border: 2px solid #ff3998;
+}
+
+#unselected {
+  background: #ffe1f0;
+  width: 336px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  font-family: "Pretendard";
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 35.8px;
+  text-align: center;
+  cursor: default;
+  user-select: none;
+}
+
+#selected {
+  background: #ff83be;
+  width: 336px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  font-family: "Pretendard";
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 35.8px;
+  text-align: center;
+  cursor: default;
+  user-select: none;
+}
+
+#answers {
+  display: flex;
+  height: fit-content;
+  flex-direction: row;
+  justify-content: center;
+  gap: 90px;
+}
+
+#choice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#like {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px;
+  box-shadow: 0px 0px 20px 0px #ff83be;
+  width: 669px;
+  height: 70px;
+  padding: 0 50px;
+  border-radius: 50px;
+}
+
+#like > p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Pretendard";
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 28.64px;
+  text-align: left;
+  user-select: none;
+}
+
+#like > div {
+  display: flex;
+  flex-direction: row;
+  font-family: "Pretendard";
+  font-size: 24px;
+  font-weight: 400;
+  gap: 12px;
+  width: 91px;
+  user-select: none;
+}
+
+#heart {
+  position: sticky;
+  width: 40px;
+}
+
+#score {
+  position: sticky;
+  left: 10px;
+}
+
+#select-wrap {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #00000040;
+  z-index: 9999;
+}
+
+#select-wrap > #screen > #header {
+  background-color: transparent;
+}
+
+#select-wrap > #modal-wrap > #modal,
+#score-modal-wrap > #modal {
+  box-shadow: 0px 0px 50px 0px #00000040;
+}
+
+#name-prof > p {
+  font-family: "Pretendard";
+  font-size: 24px;
+  font-weight: 400;
+  margin-top: 37px;
+}
+
+#ending-button > button {
+  width: 257px;
+  height: 70px;
+  padding: 20px;
+  border-radius: 100px;
+}
+
+#ending-button {
+  display: flex;
+  gap: 130px;
+}
+
+#score-prof {
+  width: 121px;
+  height: 121px;
+}
+
+#score-modal-wrap {
+  position: absolute;
+  top: 120px;
+  right: 0px;
+  z-index: 9998;
+}
+
+#score-modal-wrap > #modal {
+  gap: 0px;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+}
+
+#score-wrap {
+  display: flex;
+  flex-direction: row;
+}
+
+#progress-bar {
+  width: 231px;
+  height: 23px;
+  background-color: #ffe1f0;
+  border-radius: 30px;
+}
+
+#name-progress > #description {
+  font-size: 15px;
+  width: 231px;
+  height: 50px;
+  padding: 0;
+  flex-direction: column;
+
+  justify-content: flex-end;
+}
+
+#name-progress > #description > p {
+  display: flex;
+
+  justify-content: center;
+}
+
+#name-progress {
+  padding: 10px;
+  height: 101px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#score-wrap {
+  height: fit-content;
+  padding: 10px;
+}
+
+#rate {
+  height: 23px;
+  background-color: #ff83be;
+  border-radius: 30px;
+}
+
+#notDone {
+  font-family: "Cafe24ClassicType";
+  color: #717171;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.55px;
+  text-align: left;
+}
+
+#modal-tt {
+  padding: 15px;
+}

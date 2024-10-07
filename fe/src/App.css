@@ -1,0 +1,473 @@
+#root {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body {
+  margin: 0px;
+}
+
+p {
+  margin: 0px;
+
+  word-break: keep-all;
+}
+
+div {
+  word-break: keep-all;
+}
+
+h3 {
+  margin: 0px;
+  font-size: 96px;
+  font-family: "Cafe24ClassicType";
+  font-weight: 400;
+  user-select: none;
+}
+
+h4 {
+  margin: 0px;
+  font-size: 40px;
+  font-family: "Cafe24ClassicType";
+  font-weight: 400;
+  user-select: none;
+}
+
+h5 {
+  margin: 0px;
+  font-size: 20px;
+  font-family: "Cafe24ClassicType";
+  font-weight: 400;
+  user-select: none;
+}
+
+button {
+  cursor: pointer;
+  background-color: #ff83be;
+  color: white;
+  box-shadow: 0px 6px 4px 0px #00000040;
+  border: none;
+  padding: 20px 50px;
+  border-radius: 100px;
+
+  font-family: "Cafe24ClassicType";
+  font-weight: 400;
+  font-size: 40px;
+}
+
+button:hover {
+  background: #ff3998;
+}
+
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  color: white;
+  cursor: pointer;
+}
+
+button > a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1100px) {
+  #main-wrap {
+    gap: 50px;
+  }
+
+  h3 {
+    font-size: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #button {
+    font-size: 30px;
+  }
+
+  h4 {
+    font-size: 30px;
+  }
+
+  #instruction {
+    font-size: 22px;
+    height: 91px;
+  }
+
+  #modal-wrap {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #modal {
+    width: 70%;
+    height: fit-content;
+    padding: 70px;
+    gap: 50px;
+  }
+
+  #john-ham2 {
+    flex-direction: column;
+  }
+
+  #name {
+    flex-direction: column;
+    gap: 30px;
+  }
+  #name > input {
+    width: 195px;
+    height: 80px;
+    font-size: 30px;
+  }
+
+  #header {
+    height: 70px;
+  }
+
+  #header-title {
+    gap: 20px;
+  }
+
+  #screen {
+    width: 100vw;
+    height: calc(100vh - 70px);
+  }
+
+  #screen > .butler-chat {
+    height: calc(100% - 170px);
+  }
+
+  #butler > #flex-row > p,
+  #butler > #flex-row > div {
+    font-size: 23px;
+    padding: 15px 20px;
+    border-radius: 35px;
+  }
+
+  #user > #flex-row > p,
+  #user > #flex-row > div {
+    font-size: 23px;
+    padding: 15px 20px;
+    border-radius: 35px;
+  }
+
+  #narration > #flex-row > div {
+    font-size: 25px;
+  }
+
+  #input-wrap {
+    height: 80px;
+    padding: 8px;
+    gap: 20px;
+  }
+  #input {
+    height: 60px;
+    border-radius: 20px;
+    width: calc(100% - 200px);
+  }
+
+  #input-wrap > img {
+    height: 60px;
+  }
+  #prof {
+    width: 70px !important;
+    height: 70px !important;
+    margin-top: 30px !important;
+  }
+
+  #margin {
+    margin-top: 50px !important;
+  }
+
+  #prof > img {
+    width: 70px;
+  }
+  #butler > #flex-row > p {
+    max-width: calc(100% - 200px);
+  }
+
+  #select-wrap > #modal-wrap > #modal {
+    gap: 20px;
+    overflow-x: scroll;
+    align-items: flex-start;
+    scrollbar-width: none;
+  }
+
+  #char-list {
+  }
+
+  #character {
+    height: fit-content;
+  }
+
+  #profile {
+  }
+
+  #profile > img {
+    width: 200px !important;
+  }
+  #description {
+    padding: 20px 0px;
+    width: 220px;
+    height: 90px;
+  }
+
+  #chat {
+    height: calc(100% - 85px);
+  }
+
+  #answers > div {
+    width: fit-content;
+    font-size: 25px;
+  }
+
+  #like > div {
+    width: fit-content;
+  }
+
+  #like {
+    padding: 0px 30px;
+  }
+
+  #score-modal-wrap > #modal {
+    height: 350px;
+    overflow-y: scroll;
+    justify-content: flex-start;
+    scrollbar-width: none;
+  }
+  #modal-tt {
+    padding: 0;
+  }
+
+  #ending-button {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #name-prof > p {
+    margin: 20px 0px;
+    width: 250px;
+  }
+  #chat > div > #select-wrap > #modal-wrap > #modal {
+    align-items: center;
+  }
+  #buttons > #select-wrap {
+    gap: 50px;
+  }
+
+  #answers {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+
+  #like > p {
+    font-size: 18px;
+  }
+
+  #like {
+    margin: 20px;
+  }
+
+  #score {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-height: 720px) {
+  #main-wrap {
+    gap: 50px;
+  }
+
+  h3 {
+    font-size: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #button {
+    font-size: 30px;
+    max-width: 350px;
+  }
+
+  h4 {
+    font-size: 30px;
+  }
+
+  #modal > h4 {
+    width: 400px;
+  }
+
+  #instruction {
+    font-size: 22px;
+    height: 91px;
+  }
+
+  #modal-wrap {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #modal {
+    width: 70%;
+    height: fit-content;
+    padding: 70px;
+    gap: 50px;
+  }
+
+  #john-ham2 {
+    flex-direction: column;
+  }
+
+  #name {
+    flex-direction: column;
+    gap: 30px;
+  }
+  #name > input {
+    width: 195px;
+    height: 80px;
+    font-size: 30px;
+  }
+
+  #header {
+    height: 70px;
+  }
+
+  #header-title {
+    gap: 20px;
+  }
+
+  #screen {
+    width: 100vw;
+    height: calc(100vh - 70px);
+  }
+
+  #screen > .butler-chat {
+    height: calc(100% - 170px);
+  }
+
+  #butler > #flex-row > p,
+  #butler > #flex-row > div {
+    font-size: 23px;
+    padding: 15px 20px;
+    border-radius: 35px;
+  }
+
+  #user > #flex-row > p,
+  #user > #flex-row > div {
+    font-size: 23px;
+    padding: 15px 20px;
+    border-radius: 35px;
+  }
+
+  #narration > #flex-row > div {
+    font-size: 25px;
+  }
+
+  #input-wrap {
+    height: 80px;
+    padding: 8px;
+    gap: 20px;
+  }
+  #input {
+    height: 60px;
+    border-radius: 20px;
+    width: calc(100% - 150px);
+    padding: 0px 20px;
+    font-size: 23px;
+  }
+
+  #input-wrap > img {
+    height: 60px;
+  }
+  #prof {
+    width: 80px;
+    margin-top: 20px;
+  }
+  #butler > #flex-row > p {
+    max-width: calc(100% - 180px);
+  }
+
+  #select-wrap > #modal-wrap > #modal {
+    gap: 20px;
+    overflow-x: scroll;
+    align-items: flex-start;
+    scrollbar-width: none;
+  }
+
+  #char-list {
+  }
+
+  #character {
+    height: fit-content;
+  }
+
+  #profile {
+  }
+
+  #profile > img {
+    width: 180px !important;
+  }
+  #description {
+    padding: 20px 0px;
+    width: 220px;
+    height: 90px;
+  }
+
+  #chat {
+    height: calc(100% - 85px);
+  }
+
+  #answers > div {
+    width: fit-content;
+    font-size: 25px;
+  }
+
+  #like > div {
+    width: fit-content;
+  }
+
+  #like {
+    padding: 0px 30px;
+  }
+
+  #score-modal-wrap > #modal {
+    height: 350px;
+    overflow-y: scroll;
+    justify-content: flex-start;
+    scrollbar-width: none;
+  }
+  #modal-tt {
+    padding: 0;
+  }
+
+  #ending-button {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #name-prof > p {
+    margin: 20px 0px;
+    width: 250px;
+  }
+  #chat > div > #select-wrap > #modal-wrap > #modal {
+    align-items: center;
+  }
+  #buttons > #select-wrap {
+    gap: 50px;
+  }
+
+  #flex-row {
+    gap: 18px;
+  }
+}
