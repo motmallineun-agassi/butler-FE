@@ -7,9 +7,9 @@
   <a href="https://docs.google.com/spreadsheets/d/1D39J3pw9b9NFe48Br3QKPXZR3h6diDHNKUnx1lXPah8/edit?usp=sharing">![Static Badge](https://img.shields.io/badge/%E2%9C%93%20%20API%20%EB%AA%85%EC%84%B8%EC%84%9C-%23ffc4d6?style=for-the-badge&logoColor=white)</a>
   <a href="https://www.figma.com/file/j1iCk8bZsu0qXe2PkmClaD/%EB%AA%BB%EB%A7%90%EB%A6%AC%EB%8A%94%EC%95%84%EA%B0%80%EC%94%A8%F0%9F%A9%B6?type=design&node-id=0%3A1&mode=design&t=CrIuGMoF0bFzwTdF-1">![Static Badge](https://img.shields.io/badge/Figma-%23F24E1E?style=for-the-badge&logo=figma&logoColor=white)</a>
 
-  <a href="https://motmallineunagassi-draft.vercel.app/">![Static Badge](https://img.shields.io/badge/%E2%99%A5%20%EB%AA%BB%EB%A7%90%EB%A6%AC%EB%8A%94%20%EC%95%84%EA%B0%80%EC%94%A8%20%E2%99%A5-%23ff5d8f?style=for-the-badge&logoColor=white)</a>
+  <a href="https://fe-only-butler.vercel.app/">![Static Badge](https://img.shields.io/badge/%E2%99%A5%20%EB%AA%BB%EB%A7%90%EB%A6%AC%EB%8A%94%20%EC%95%84%EA%B0%80%EC%94%A8%20%E2%99%A5-%23ff5d8f?style=for-the-badge&logoColor=white)</a>
 
-  현재 백엔드 서버가 내려간 상태로, 집사와의 대화 및 시나리오 진행이 불가합니다.
+  현재 백엔드 서버가 내려간 상태로, 집사와의 대화 진행이 불가합니다.
   
 </div>
 
